@@ -4,84 +4,149 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>ARQEN — Build Beyond Reality</title>
-  <meta name="description" content="ARQEN is an independent digital studio creating distinctive websites, immersive digital experiences and modern visual identities. Explore our 3D city." />
-  <meta name="theme-color" content="#07040f" />
+  <meta name="description" content="ARQEN is an independent digital studio. We create digital experiences, websites and intelligent solutions that move businesses forward." />
+  <meta name="theme-color" content="#040409" />
   <meta property="og:title" content="ARQEN — Build Beyond Reality" />
-  <meta property="og:description" content="Independent digital studio. Digital experiences. Infinite possibilities." />
+  <meta property="og:description" content="Independent digital studio: websites, UI/UX, automation, 3D experiences and AI solutions." />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <script type="module" crossorigin src="./assets/index-BYElffvM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-naK5qo2g.css">
+  <script type="module" crossorigin src="./assets/index-DEdZxybB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CyMQrNvA.css">
 </head>
 <body>
-  <canvas id="scene" aria-label="Interactive 3D city of the ARQEN studio"></canvas>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><i></i></div>
 
-  <div id="fx" aria-hidden="true"><div class="scan"></div><div class="noise"></div><div class="vignette"></div><div class="slices"><i></i><i></i><i></i></div></div>
-
-  <!-- Loading screen -->
-  <div id="loader" role="status">
-    <div class="loader__inner">
-      <div class="loader__emblem" data-emblem></div>
-      <div class="loader__word" data-text="ARQEN">ARQEN</div>
-      <div class="loader__tag">BUILD BEYOND REALITY.</div>
-      <div class="bar"><i></i></div>
-      <div class="status">Booting city systems</div>
-    </div>
-  </div>
-
-  <!-- Intro overlay -->
-  <section id="intro" aria-label="Welcome">
-    <div class="intro__inner">
-      <p class="intro__kicker"><span data-emblem></span> Independent Digital Studio</p>
-      <h1 class="intro__title glitch-text" data-text="ARQEN">ARQEN</h1>
-      <p class="intro__slogan">BUILD BEYOND REALITY.</p>
-      <p class="intro__tag">Digital Experiences. Infinite Possibilities.</p>
-      <div class="intro__actions">
-        <button id="enterBtn" class="btn btn--primary btn--big">Enter the city</button>
-        <button id="introMenuBtn" class="btn btn--big">Quick navigation</button>
-      </div>
-      <p class="intro__hint desk">WASD / arrows to move · drag to look · click signs</p>
-      <p class="intro__hint mob">Joystick to move · swipe to look · tap signs</p>
-    </div>
-  </section>
-
-  <!-- HUD -->
-  <header id="hud">
-    <button class="hud__logo" data-nav-home aria-label="ARQEN menu" onclick="document.getElementById('menuBtn').click()"><span data-emblem></span><b>ARQEN</b></button>
-    <div id="compass" aria-hidden="true"><div class="compass__track"></div><i class="compass__tick"></i></div>
-    <button id="menuBtn" class="hud__menu" aria-label="Quick navigation"><span></span><span></span><span></span><em>MENU</em></button>
+  <header class="nav">
+    <a class="nav__logo" href="#home" aria-label="ARQEN home"><span data-emblem></span><b>ARQEN</b></a>
+    <nav class="nav__links" aria-label="Main"></nav>
+    <a class="btn btn--ghost nav__cta" href="#contact">Let’s talk</a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </header>
+  <div class="mobile-menu" aria-hidden="true"><nav></nav><div class="mobile-menu__socials"></div></div>
 
-  <button id="contactBtn" class="contact-fab" aria-label="Contact ARQEN"><i></i>CONTACT</button>
+  <main>
+    <!-- 01 HERO -->
+    <section id="home" class="hero" data-section>
+      <div class="hero__wordmark" aria-hidden="true">ARQEN</div>
+      <div class="hero__top">
+        <span class="label">Independent Digital Studio</span>
+        <span class="label">Digital Experiences. Infinite Possibilities.</span>
+      </div>
+      <div class="hero__content">
+        <p class="label label--accent">ARQEN — 01</p>
+        <h1 class="hero__title"><span class="line"><span>Build beyond</span></span><span class="line"><span><em>reality.</em></span></span></h1>
+        <p class="hero__text">We create digital experiences, websites and intelligent solutions that move businesses forward.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#work">Explore our work <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#contact">Let’s talk</a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#about"><span>Scroll</span><i></i></a>
+    </section>
 
-  <div id="joystick" class="joy" aria-hidden="true"><div class="joy__knob"></div></div>
-  <div id="prompt" class="prompt" role="button" tabindex="0"></div>
-  <div id="hint" class="hint">
-    <span class="desk"><b>WASD</b> move · <b>Shift</b> run · <b>Drag</b> look · <b>E</b> enter · follow the light beams</span>
-    <span class="mob">Left stick: move · Swipe: look · Follow the light beams</span>
-  </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee__track"></div></div>
 
-  <!-- Quick navigation -->
-  <nav id="menu" aria-label="Quick navigation">
-    <div class="menu__inner">
-      <div class="menu__head"><span class="eyebrow">Quick navigation</span><button class="menu__close" aria-label="Close menu">✕</button></div>
-      <div class="menu__list"></div>
-      <button class="menu__explore" data-explore>Free explore the city →</button>
-      <div class="menu__socials"></div>
+    <!-- 02 ABOUT -->
+    <section id="about" class="section about" data-section>
+      <div class="wrap about__grid">
+        <div class="section__head">
+          <p class="label label--accent">02 — About</p>
+          <h2 class="display reveal">We don’t follow the future. <em>We build it.</em></h2>
+        </div>
+        <div class="about__body">
+          <p class="lead reveal">ARQEN is an independent digital studio focused on design, technology and innovation. We create distinctive websites, immersive digital experiences and intelligent tools for businesses that want to stand out.</p>
+          <p class="reveal">We believe a website should be more than a collection of pages. It should communicate a vision, capture attention and leave a lasting impression, while staying fast, clear and easy to use.</p>
+          <ul class="principles"></ul>
+          <div class="founder reveal">
+            <div class="founder__mark" data-emblem></div>
+            <div>
+              <p class="label">Founder &amp; Creative Director</p>
+              <p class="founder__name">Arsenii</p>
+              <p>ARQEN brings together creative thinking, modern technology and a passion for digital experimentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 SERVICES -->
+    <section id="services" class="section services" data-section>
+      <div class="wrap">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="label label--accent">03 — Services</p>
+            <h2 class="display reveal">What we <em>create.</em></h2>
+          </div>
+          <p class="section__intro reveal">Five disciplines, one studio. From the first idea to a launched product, everything is designed and built in-house.</p>
+        </div>
+        <div class="cards"></div>
+      </div>
+    </section>
+
+    <!-- 04 WORK -->
+    <section id="work" class="section work" data-section>
+      <div class="wrap">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="label label--accent">04 — Selected work</p>
+            <h2 class="display reveal">Ideas turned into <em>experiences.</em></h2>
+          </div>
+          <p class="section__intro reveal">Concept projects: self-initiated explorations by ARQEN across different industries. They are not client commissions.</p>
+        </div>
+        <div class="projects"></div>
+      </div>
+    </section>
+
+    <!-- 05 APPROACH -->
+    <section id="approach" class="section approach" data-section>
+      <div class="wrap">
+        <div class="section__head">
+          <p class="label label--accent">05 — Our approach</p>
+          <h2 class="display reveal">From an idea to a <em>digital experience.</em></h2>
+        </div>
+        <div class="steps"><div class="steps__line"><i></i></div></div>
+        <p class="approach__note reveal">Clear communication. Thoughtful execution. No unnecessary complexity. Pricing and timelines depend on the scope, functionality and the visual experience you need.</p>
+      </div>
+    </section>
+
+    <!-- 06 CONTACT -->
+    <section id="contact" class="section contact" data-section>
+      <div class="wrap contact__grid">
+        <div>
+          <p class="label label--accent">06 — Contact</p>
+          <h2 class="display reveal">Have an idea? <em>Let’s make it real.</em></h2>
+          <p class="lead reveal">Every great digital experience begins with a conversation. Tell us about your project and you’ll get a personal reply from Arsenii.</p>
+          <div class="socials"></div>
+        </div>
+        <form class="form reveal" novalidate>
+          <div class="form__row">
+            <label><span>Name</span><input name="name" autocomplete="name" required maxlength="80" placeholder="Your name" /></label>
+            <label><span>Company / website</span><input name="company" maxlength="120" placeholder="Optional" /></label>
+          </div>
+          <label><span>Service</span><select name="service"></select></label>
+          <label><span>Project</span><textarea name="message" rows="5" required maxlength="1500" placeholder="Goals, timeline, references…"></textarea></label>
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit" data-via="whatsapp">Send via WhatsApp <span class="arrow">→</span></button>
+            <button class="btn btn--ghost" type="submit" data-via="telegram">Send via Telegram</button>
+          </div>
+          <p class="form__note">No data is stored on this site. Your message opens directly in WhatsApp (pre-filled) or is copied for Telegram, so it reaches Arsenii personally.</p>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <a class="nav__logo" href="#home"><span data-emblem></span><b>ARQEN</b></a>
+      <p class="footer__slogan">Build beyond reality.</p>
+      <nav class="footer__links"></nav>
+      <p class="footer__copy">© <span data-year></span> ARQEN · Independent Digital Studio</p>
     </div>
-  </nav>
+  </footer>
 
-  <!-- District panel -->
-  <aside id="panel" aria-hidden="true">
-    <div class="panel__head">
-      <span class="panel__num"></span><span class="panel__name"></span>
-      <button class="panel__close" aria-label="Close panel">✕</button>
-    </div>
-    <div class="panel__body"></div>
-  </aside>
+  <article id="project" class="project" aria-hidden="true"></article>
 
-  <!-- Project page -->
-  <article id="project"><button class="project__close">← Works</button></article>
-
-  <noscript><p style="padding:24px;color:#fff">ARQEN — Build Beyond Reality. Contact: wa.me/380674784243 · t.me/zavars_2006</p></noscript>
 </body>
 </html>
