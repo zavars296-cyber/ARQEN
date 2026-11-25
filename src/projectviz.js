@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { mulberry32 } from './world/common.js';
+import { mulberry32 } from './three/common.js';
 
 // Real-time hero visuals for each concept project page. Each builder fills a
 // small scene and returns an update(t) callback. One renderer is created when
@@ -53,7 +53,7 @@ function speedLines(count, colors, spread = 14, len = 6) {
   return new THREE.LineSegments(g, m);
 }
 
-const BUILDERS = {
+export const BUILDERS = {
   velocity(scene, camera, renderer) {
     const env = envFor(renderer, ['#ff2d55', '#ff8a3d', '#ffffff']);
     camera.position.set(0, 3, 14);
@@ -71,7 +71,7 @@ const BUILDERS = {
     const body = new THREE.ExtrudeGeometry(s, { depth: 3.4, bevelEnabled: true, bevelSize: 0.35, bevelThickness: 0.4, bevelSegments: 4, curveSegments: 16 });
     body.translate(0, 0, -1.7);
     const car = new THREE.Group();
-    car.add(new THREE.Mesh(body, new THREE.MeshStandardMaterial({ color: '#1c1c24', metalness: 1, roughness: 0.22, envMap: env, envMapIntensity: 0.7 })));
+    car.add(new THREE.Mesh(body, new THREE.MeshStandardMaterial({ color: '#3a3a48', metalness: 1, roughness: 0.2, envMap: env, envMapIntensity: 1.4 })));
     const strip = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.12, 3.8), new THREE.MeshBasicMaterial({ color: glow('#ff2d55', 3), toneMapped: false }));
     strip.position.set(-4.95, 0.75, 0);
     const head = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.1, 3.4), new THREE.MeshBasicMaterial({ color: glow('#ffffff', 3), toneMapped: false }));
