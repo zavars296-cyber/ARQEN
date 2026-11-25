@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ARQEN — Build Beyond Reality</title>
+  <meta name="description" content="ARQEN is an independent digital studio creating distinctive websites, immersive digital experiences and modern visual identities. Explore our 3D city." />
+  <meta name="theme-color" content="#07040f" />
+  <meta property="og:title" content="ARQEN — Build Beyond Reality" />
+  <meta property="og:description" content="Independent digital studio. Digital experiences. Infinite possibilities." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <script type="module" crossorigin src="./assets/index-BYElffvM.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-naK5qo2g.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Interactive 3D city of the ARQEN studio"></canvas>
+
+  <div id="fx" aria-hidden="true"><div class="scan"></div><div class="noise"></div><div class="vignette"></div><div class="slices"><i></i><i></i><i></i></div></div>
+
+  <!-- Loading screen -->
+  <div id="loader" role="status">
+    <div class="loader__inner">
+      <div class="loader__emblem" data-emblem></div>
+      <div class="loader__word" data-text="ARQEN">ARQEN</div>
+      <div class="loader__tag">BUILD BEYOND REALITY.</div>
+      <div class="bar"><i></i></div>
+      <div class="status">Booting city systems</div>
+    </div>
+  </div>
+
+  <!-- Intro overlay -->
+  <section id="intro" aria-label="Welcome">
+    <div class="intro__inner">
+      <p class="intro__kicker"><span data-emblem></span> Independent Digital Studio</p>
+      <h1 class="intro__title glitch-text" data-text="ARQEN">ARQEN</h1>
+      <p class="intro__slogan">BUILD BEYOND REALITY.</p>
+      <p class="intro__tag">Digital Experiences. Infinite Possibilities.</p>
+      <div class="intro__actions">
+        <button id="enterBtn" class="btn btn--primary btn--big">Enter the city</button>
+        <button id="introMenuBtn" class="btn btn--big">Quick navigation</button>
+      </div>
+      <p class="intro__hint desk">WASD / arrows to move · drag to look · click signs</p>
+      <p class="intro__hint mob">Joystick to move · swipe to look · tap signs</p>
+    </div>
+  </section>
+
+  <!-- HUD -->
+  <header id="hud">
+    <button class="hud__logo" data-nav-home aria-label="ARQEN menu" onclick="document.getElementById('menuBtn').click()"><span data-emblem></span><b>ARQEN</b></button>
+    <div id="compass" aria-hidden="true"><div class="compass__track"></div><i class="compass__tick"></i></div>
+    <button id="menuBtn" class="hud__menu" aria-label="Quick navigation"><span></span><span></span><span></span><em>MENU</em></button>
+  </header>
+
+  <button id="contactBtn" class="contact-fab" aria-label="Contact ARQEN"><i></i>CONTACT</button>
+
+  <div id="joystick" class="joy" aria-hidden="true"><div class="joy__knob"></div></div>
+  <div id="prompt" class="prompt" role="button" tabindex="0"></div>
+  <div id="hint" class="hint">
+    <span class="desk"><b>WASD</b> move · <b>Shift</b> run · <b>Drag</b> look · <b>E</b> enter · follow the light beams</span>
+    <span class="mob">Left stick: move · Swipe: look · Follow the light beams</span>
+  </div>
+
+  <!-- Quick navigation -->
+  <nav id="menu" aria-label="Quick navigation">
+    <div class="menu__inner">
+      <div class="menu__head"><span class="eyebrow">Quick navigation</span><button class="menu__close" aria-label="Close menu">✕</button></div>
+      <div class="menu__list"></div>
+      <button class="menu__explore" data-explore>Free explore the city →</button>
+      <div class="menu__socials"></div>
+    </div>
+  </nav>
+
+  <!-- District panel -->
+  <aside id="panel" aria-hidden="true">
+    <div class="panel__head">
+      <span class="panel__num"></span><span class="panel__name"></span>
+      <button class="panel__close" aria-label="Close panel">✕</button>
+    </div>
+    <div class="panel__body"></div>
+  </aside>
+
+  <!-- Project page -->
+  <article id="project"><button class="project__close">← Works</button></article>
+
+  <noscript><p style="padding:24px;color:#fff">ARQEN — Build Beyond Reality. Contact: wa.me/380674784243 · t.me/zavars_2006</p></noscript>
+</body>
+</html>
